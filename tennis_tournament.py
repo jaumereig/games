@@ -3,6 +3,14 @@ print("USAGE:\n1st) Choose a draw:\nGrandSlam\nM1000\nATP500\nATP250\nPersonaliz
 print("Choose a draw: ")
 draw = input()
 #draw = 'ATP250'
+follow = 0
+while follow == False:
+    if draw == 'ATP250' or draw == 'ATP500' or draw == 'M1000' or draw == 'GrandSlam' or draw == 'Personalized':
+        follow = True
+    else:
+        print('***INPUT ERROR***\nMake sure to write the type of draw as it is stated.')
+        draw = input()
+follow = False
 if draw == 'ATP250':
     print("Draw of 32 players:")
     l_seeds = []
@@ -56,7 +64,13 @@ if draw == 'ATP250':
 elif draw == 'ATP500':
     print("ATP500 can either have a draw of size 32 or size 64. Choose one.")
     size_draw = input()
-    if size_draw == 32:
+    while follow == False:
+        if size_draw == '32' or size_draw == '64':
+            follow = True
+        else:
+            print("***INPUT ERROR***\nInput should be an integer. Options 32 and 64.")
+            size_draw = input()
+    if size_draw == '32' and follow:
             print("Draw of 32 players:")
             l_seeds = []
             while len(l_seeds) < 8:
@@ -105,7 +119,7 @@ elif draw == 'ATP500':
             print('{}\n{}'.format(allplayers[8], allplayers[12]))
             print('Q {}\n{}'.format(qualyplayers[0], allplayers[16]))
             print('w.o.\nSeed #2: {}'.format(l_seeds[1]))
-    elif size_draw == 64:
+    elif size_draw == '64' and follow:
             print("Draw of 64 players:")
             l_seeds = []
             while len(l_seeds) < 16:
@@ -178,8 +192,7 @@ elif draw == 'ATP500':
             print('{}\n{}'.format(allplayers[14], allplayers[18]))
             print('Q {}\n{}'.format(qualyplayers[0], allplayers[17]))
             print('w.o.\nSeed #2: {}'.format(l_seeds[1]))
-    else:
-        print("***INPUT ERROR***\nInput should be an integer. Options 32 and 64.")
+
 elif draw == 'M1000':
     print("Draw of 128 players:")
     l_seeds = []
@@ -247,7 +260,14 @@ elif draw == 'GrandSlam':
 elif draw == 'Personalized':
     print("What type of draw? Options:\nReversed ranking\tTop 8 players\tTop 20 players\tTop against bottom")
     type_of_draw = input()
-    if type_of_draw == 'Reversed ranking':
+    follow = False
+    while follow == False:
+        if type_of_draw == 'Reversed ranking' or type_of_draw == 'Top 8 players' or type_of_draw == 'Top 20 players' or type_of_draw == 'Top against bottom':
+            follow = True
+        else:
+                print("***INPUT ERROR***\nOptions:\nReversed ranking\tTop 8 players\tTop 20 players\tTop against bottom")
+                type_of_draw = input()
+    if type_of_draw == 'Reversed ranking' and follow:
         l_seeds = []
         while len(l_seeds) < 8:
             seeds = random.randint(85, 100)
@@ -294,21 +314,21 @@ elif draw == 'Personalized':
         print('w.o.\nSeed #2: {}'.format(l_seeds[1]))
         print(l_seeds, qualyplayers)
 
-    elif type_of_draw == 'Top 8 players':
+    elif type_of_draw == 'Top 8 players' and follow:
         l_seeds = [1,2,3,4,5,6,7,8]
         while len(l_seeds) > 0:
             out = random.choice(l_seeds)
             print(out)
             l_seeds.remove(out)
     
-    elif type_of_draw == 'Top 20 players':
+    elif type_of_draw == 'Top 20 players' and follow:
         l_seeds = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
         while len(l_seeds) > 0:
             out = random.choice(l_seeds)
             print(out)
             l_seeds.remove(out)
     
-    elif type_of_draw == 'Top against bottom':
+    elif type_of_draw == 'Top against bottom' and follow:
         l_seeds = [1,2,3,4,5,6,7,8, 9, 10]
         l_bottom = [91,92,93,94,95,96,97,98,99,100]
         while len(l_seeds) > 0 and len(l_bottom) > 0:
@@ -317,5 +337,3 @@ elif draw == 'Personalized':
             print("{} vs. {}\n".format(s_out, b_out))
             l_seeds.remove(s_out)
             l_bottom.remove(b_out)
-else:
-    print("***INPUT ERROR***\nUSAGE:\n1st) Choose a draw:\n'GrandSlam'\n'M1000'\n'ATP500'\n'ATP250'\n'Personalized'\n2nd) A list of ranking numbers is displayed in correct order simulating a real draw.")
