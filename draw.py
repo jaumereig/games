@@ -1,6 +1,6 @@
-import matplotlib
+""" import matplotlib"""
 import random
-print("USAGE:\n1st) Choose a draw:\n'GrandSlam'\n'M1000'\n'ATP500'\n'ATP250'\n'Personalized'\n2nd) A list of ranking numbers is displayed in correct order simulating a real draw.")
+print("USAGE:\n1st) Choose a draw:\nGrandSlam\nM1000\nATP500\nATP250\nPersonalized\n2nd) A list of ranking numbers is displayed in correct order simulating a real draw.")
 print("Choose a draw: ")
 draw = input()
 #draw = 'ATP250'
@@ -246,7 +246,7 @@ elif draw == 'GrandSlam':
     # THIRD 8
     
 elif draw == 'Personalized':
-    print("What type of draw? Options:\n'Reversed ranking'\t'Top 8 players'\t'Top 20 players'\t'Top against bottom'")
+    print("What type of draw? Options:\nReversed ranking\tTop 8 players\tTop 20 players\tTop against bottom")
     type_of_draw = input()
     if type_of_draw == 'Reversed ranking':
         l_seeds = []
