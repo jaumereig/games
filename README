@@ -1,0 +1,11 @@
+This repository contains games that are useful for both training programming and entertain ourselves.
+### USAGE ###
+1) animal_draw.py:
+	- This is a simple program that allows to make a draw with a given list of items. In this case animals.
+	- Command line: python3 animal_draw.py
+2) tennis_tournament.py:
+	- A program that simulates a tennis tournament of all professional men categories. Plus some additional personalized options.
+	- Command line: python3 tennis_tournament.py
+3) survival_role.py:
+	- A game of role in which you have to survive the different traps and situations that you will choose as you advance.
+	- Command line: python3 survival_role.py

@@ -1,4 +1,3 @@
-""" import matplotlib"""
 import random
 print("USAGE:\n1st) Choose a draw:\nGrandSlam\nM1000\nATP500\nATP250\nPersonalized\n2nd) A list of ranking numbers is displayed in correct order simulating a real draw.")
 print("Choose a draw: ")
