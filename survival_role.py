@@ -126,5 +126,5 @@ if location1 == 'Cosima':
         print(color.DARKCYAN+a)
         print(color.BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+color.END)
         a = """ 
-        The smell is definitely coming from this tree in front of you right now.  """
+        The smell is definitely coming from this tree in front of you right now.  """ """ push in github """
 
