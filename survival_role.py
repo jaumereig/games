@@ -101,7 +101,7 @@ if location1 == 'Cosima':
         if direction1 == 'A' or direction1 == 'B':
             follow = True
         else:
-            print("Where will you go?\n{}\n{}\n{}\n(Input capital letter only)".format("A - Away from the river", 'B - Cross the river '))
+            print("Where will you go?\n{}\n{}\n(Input capital letter only)".format("A - Away from the river", 'B - Cross the river '))
             direction1 = input()
 
     if direction1 == 'A':
@@ -126,5 +126,5 @@ if location1 == 'Cosima':
         print(color.DARKCYAN+a)
         print(color.BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+color.END)
         a = """ 
-        The smell is definitely coming from this tree in front of you right now.  """ """ push in github """
+        The smell is definitely coming from this tree in front of you right now.  """
 
