@@ -1,8 +1,10 @@
-
-""" import sys """
+import sys
 from PIL import Image
-# image = Image.open('Image1.png')
-# image.show()
+"""
+image = Image.open('Image1.png')
+image.show() 
+easy code for showing images in current directory (png or jpg format)
+"""
 # =======================
 # === START VARIABLES ===
 # =======================
@@ -134,12 +136,34 @@ if location1 == 'Cosima':
         player_name = input() # Introduction of player and variable can be used all along the program
         a ="""(Acantha)- Nice to meet you """
         b = """, I must warn you that it is not safe for you to stay here. At mid night the creatures from the underground arise and become deadly
-        carnivores whom will not leave any trace of life behind them. However, I am afraid there is no time left for you to leave so we shall provide
+        carnivores which will not leave any trace of life behind them. However, I am afraid there is no time left for you to leave so we shall provide
         you with our hideout to keep you protected."""
         print(a+player_name+b)
         a="""- Okay. Hold on. I can't believe this is real! You look like a tiny human the size of my pinky and you can speak like me, that is so cool!
-        Though, I am very interested in knowing more about these """
+        Though, I am very interested in knowing more about these underground animals you are talking about. How can I know they won't hurt me?
+        (Acantha)- You haven't seen any of us but we have seen many of you instead. The creatures I am talking about are gigantic, they live underground
+        and can see at night everything around them, just like you do during the day. They even have the capacity to perceive the temperature of the bodies
+        surrounding them. This is how they identify bigger prays while they are sleeping. We call them Minotaurus. Trust me they are pure evil.
+        So that you can survive you will need an invisibility cloak. I can offer you one but first you must help me."""
         print("({}){}".format(player_name,a))
+        a="""-Of course. I have no choice, and I really want to have that invisibility cloack. How can I help you?
+        (Acantha)- I need you to solve a puzzle. Unfortunately, a witch enchanted our tree and it is dying. We can only unlock the enchantment by writing
+        the correct code number onto the base of the tree's trunk. All we know is that the code is 3 digits long and we only have 3 tries left. Can you help?"""
+        print("({}){}\nWrite y if you are ready to solve the puzzle.".format(player_name,a))
+        confirmation = input()
+        follow = 0
+        while follow == 0:
+            if confirmation == 'YES' or confirmation == 'yes' or confirmation == 'y':
+                follow = True
+            else:
+                print("Write y if you are ready to solve the puzzle.")
+                confirmation = input()
+        a="""-I will try. Let me see the puzzle."""
+        print("({}){}".format(player_name,a))
+        image = Image.open('/Images/A_cosima1.png')
+        image.show() 
+        cosima_puzzle = input()
+        print("({})- My answer for the code to unlock the enchantment is: {}.".format(player_name, cosima_puzzle))
     if direction1 == 'B':
         LIFE_POINTS = LIFE_POINTS - 500
         a = """ You are crossing the river and thus water is in contact with you. You are hurrying to get to the other side because water seems to be
