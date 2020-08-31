@@ -1,7 +1,8 @@
 
 """ import sys """
-# My update "Tres tristes tigres comen trigo de un trigal" "Jamba part III"
-
+from PIL import Image
+# image = Image.open('Image1.png')
+# image.show()
 # =======================
 # === START VARIABLES ===
 # =======================
@@ -98,8 +99,7 @@ while follow == 0:
 if location1 == 'Cosima':
     print(DARKCYAN+"Good choice!\nAfter a few days walking you seem to have found a nice green grassland. You walk around and discover a huge diversity of fruits and plants that you have never seen before.")
     print('There is even a river with crystalline water. You deserve drinking so you stop for a bit and enjoy yourself.')
-    a = """
-    Hey! Wake up! You fell asleep. It is time to get up and keep discovering what's new. Oh, wait. Something looks wrong. You got some rashes on your arms.
+    a = """Hey! Wake up! You fell asleep. It is time to get up and keep discovering what's new. Oh, wait. Something looks wrong. You got some rashes on your arms.
     It must have been the water you just had. Luckily, in BIO 101 professor Layton once talked about this fruit that can ease skin rushes. You can't remember 
     the name but you do remember that the fruit was red and triangular."""
     print(a)
@@ -116,26 +116,35 @@ if location1 == 'Cosima':
             direction1 = input()
 
     if direction1 == 'A':
-        a = """
-        You are going towards a yet to be discovered land. Is there going to be the fruit that you need to relieve your pain? We shall discover!
+        a = """You are going towards a yet to be discovered land. Is there going to be the fruit that you need to relieve your pain? We shall discover!
         After walking through a plain with essentially low grass plants you see taller trees towards the horizon.
         Running is your best choice... You have reached the tall trees."""
-        b = """ 
-        Bingo! These trees have fruits. Now is time for you to find the red and triangular fruit that professor Layton mentioned in class. There
+        b = """ Bingo! These trees have fruits. Now is time for you to find the red and triangular fruit that professor Layton mentioned in class. There
         is one tree with a similar fruit. You take a few and eat one carefully.
          """
         print(DARKCYAN+a+b)
         LIFE_POINTS = LIFE_POINTS + 200
         print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
-        """ introduce fairies """
+        a = """Now that you have recovered you keep walking around the trees and recollect some fruits. This particular tree is drawing your attention.
+        The crown of the tree is emitting a neon green light all around it. Get closer and discover what is going on!
+        There are small creatures flying around the tree! They are tiny and move very fast, have little wings which are actually emitting the neon
+        green light. If you move your hands towards them... they actually come closer to you. Maybe they actually like you and you are being welcomed.
+        (Fairy)- Hello visitor! My name is Acantha. What is your name?"""
+        print(DARKCYAN+a)
+        player_name = input() # Introduction of player and variable can be used all along the program
+        a ="""(Acantha)- Nice to meet you """
+        b = """, I must warn you that it is not safe for you to stay here. At mid night the creatures from the underground arise and become deadly
+        carnivores whom will not leave any trace of life behind them. However, I am afraid there is no time left for you to leave so we shall provide
+        you with our hideout to keep you protected."""
+        print(a+player_name+b)
+        a="""- Okay. Hold on. I can't believe this is real! You look like a tiny human the size of my pinky and you can speak like me, that is so cool!
+        Though, I am very interested in knowing more about these """
+        print("({}){}".format(player_name,a))
     if direction1 == 'B':
         LIFE_POINTS = LIFE_POINTS - 500
-        a = """ 
-        You are crossing the river and thus water is in contact with you. You are hurrying to get to the other side because water seems to be
+        a = """ You are crossing the river and thus water is in contact with you. You are hurrying to get to the other side because water seems to be
         slightly poisonous.  On the other side of the river the landscape is just the same. However, it smells somewhat different. You shall trace 
         that smell and find out where it comes from!"""
         print(DARKCYAN+a)
         print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
-        a = """ 
-        The smell is definitely coming from this tree in front of you right now.  """
-
+        a = """The smell is definitely coming from this tree in front of you right now.  """
