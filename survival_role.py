@@ -1,4 +1,4 @@
-import sys
+""" import sys"""
 from PIL import Image
 """
 image = Image.open('Image1.png')
@@ -160,7 +160,7 @@ if location1 == 'Cosima':
                 confirmation = input()
         a="""-I will try. Let me see the puzzle."""
         print("({}){}".format(player_name,a))
-        image = Image.open('/Images/A_cosima1.png')
+        image = Image.open('A_cosima1.png')
         image.show() 
         cosima_puzzle = input()
         print("({})- My answer for the code to unlock the enchantment is: {}.".format(player_name, cosima_puzzle))
