@@ -1,0 +1,51 @@
+===========
+==JUGADOR==
+===========
+Current:
+- Coge 3 items (puede repetir).
+- Tiene 10.000 LP.
+- Los LP pueden subir y bajar según la narración de la historia y también durante las pruebas.
+- Si llegas a LP =<0 pierdes el juego y todo el progreso.
+
+Ideas:
+- Al iniciar juego, elegir características del personaje que pueden influir en las pruebas:
+        · Tipo de cuerpo: atlético delgado musculado grande
+        · Peso: <68 Kg 68-80 Kg >80 Kg
+        · Altura: <175 cm 175-190 cm >190 cm
+        · ...
+
+===========
+==TIERRAS==
+===========
+Current:
+- Cada nivel tiene dos tierras, cada tierra una característica o más (animales, paisaje, condiciones climáticas...).
+- El personaje escoje una de las dos, solo sabe el nombre y una breve descripción. Después se enfrenta a las pruebas dentro de esa tierra.
+- Para superar las pruebas necesitará los materiales escogidos al inicio y/o el intelecto para superar pruebas mentales.
+- También se pueden conseguir materiales adicionales durante la superación de las pruebas.
+- El material se puede perder también, por usarlo en la prueba o porque la historia te obliga.
+
+---------------------------------------
+NIVEL 1:
+- Cosima: tierra de hadas
+- Griffin: tierra de seres mitológicos
+---------------------------------------
+
+Ideas:
+- Número de tierras (?)
+- Nombres/características de las tierras: ...
+
+===========
+==PRUEBAS==
+===========
+Current:
+---------------------------------------
+NIVEL 1:
+- Cosima:
+    -> prueba 1 (correspondiente a direction1 A) (empezar)
+    -> prueba 2 (correspondiente a direction1 B) (empezar)
+- Griffin:
+    -> empezar
+---------------------------------------
+Ideas:
+- A medida que avanzas niveles tienes más pruebas en cada tierra (?)
+- ...
