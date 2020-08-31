@@ -1,6 +1,6 @@
 
 """ import sys """
-# My update "Tres tristes tigres comen trigo de un trigal"
+# Pablito clavó un clavito
 
 # =======================
 # === START VARIABLES ===
