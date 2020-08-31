@@ -48,4 +48,7 @@ NIVEL 1:
 ---------------------------------------
 Ideas:
 - A medida que avanzas niveles tienes más pruebas en cada tierra (?)
+- Los LP perdidos/recuperados durante las pruebas pueden variar según el material (y características (?)) que tenga el jugador.
+    i.e.: si está en una tierra helada sin tienda o fuego perderá más LP aunque supere la prueba.
+    i.e.: si encuentra una curación para recuperar LP pero le falta algún material importante en esa tierra, la curación no será tan eficiente.
 - ...
