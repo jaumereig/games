@@ -1,10 +1,6 @@
 
 """ import sys """
-<<<<<<< HEAD
 # My update "Tres tristes tigres comen trigo de un trigal" "Jamba part II"
-=======
-# Pablito clavó un clavito
->>>>>>> 0807983e7f42a629bd872f375652a97c8a994267
 
 # =======================
 # === START VARIABLES ===
