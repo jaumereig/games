@@ -1,4 +1,4 @@
-""" import sys"""
+import sys
 from PIL import Image
 """
 image = Image.open('Image1.png')
@@ -163,7 +163,32 @@ if location1 == 'Cosima':
         image = Image.open('A_cosima1.png')
         image.show() 
         cosima_puzzle = input()
-        print("({})- My answer for the code to unlock the enchantment is: {}.".format(player_name, cosima_puzzle))
+        print("({})- My answer code to unlock the enchantment is: {}.".format(player_name, cosima_puzzle))
+        follow = 0
+        tries_left = 3
+        while follow == 0 and tries_left >= 2:
+            if cosima_puzzle == '153':
+                print("Correct answer")
+                follow = 1
+            else:
+                tries_left -= 1
+                print("The code is incorrect. Try again! Tries left: {}".format(tries_left))
+                cosima_puzzle = input()
+        LIFE_POINTS = LIFE_POINTS - 1000
+        if tries_left <= 1:
+            print("You lost all your opportunities.")
+            print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
+            sys.exit(0) # this if we want to finish game when player fails to pass a test
+        else:
+            print("You are successful!")
+            a="""(Acantha)- Fantastic! The code works. This is going to break the enchantment which means that we will stay in our home. We
+            appreciate your effort. As promised, we are giving you the invisibility cloak as a reward."""
+            print("{}".format(a))
+            print(LIGHTRED+'Backpack:'+END)
+            backpack.append('Invisibility cloak')
+            for i in backpack:
+                print(LIGHTRED+i+END)
+        print("continues here")
     if direction1 == 'B':
         LIFE_POINTS = LIFE_POINTS - 500
         a = """ You are crossing the river and thus water is in contact with you. You are hurrying to get to the other side because water seems to be
