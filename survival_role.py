@@ -86,7 +86,7 @@ while ready_to_start == False:
                         print(i)
                     ready_to_start = 1
 print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
-print(BACKGROUNDBLUE+BLACK+"LEVEL1"+END+DARKCYAN)
+print(BACKGROUNDBLUE+BLACK+"LEVEL 1"+END+DARKCYAN)
 print("You are in Manning. This is a valley with poor biodiversity so you have to get out of here and find a place with resources that will ensure your survival.")
 print(LIGHTRED+"Where do you choose to go?\n{}\n{}\n(Input name only)".format("Cosima -- Land of fairies", "Griffin -- Land of mythological creatures"))
 location1 = input()
@@ -142,8 +142,8 @@ if location1 == 'Cosima':
         a="""- Okay. Hold on. I can't believe this is real! You look like a tiny human the size of my pinky and you can speak like me, that is so cool!
         Though, I am very interested in knowing more about these underground animals you are talking about. How can I know they won't hurt me?
         (Acantha)- You haven't seen any of us but we have seen many of you instead. The creatures I am talking about are gigantic, they live underground
-        and can see at night everything around them, just like you do during the day. They even have the capacity to perceive the temperature of the bodies
-        surrounding them. This is how they identify bigger prays while they are sleeping. We call them Minotaurus. Trust me they are pure evil.
+        and can see at night everything around them, just like you do during the day. They even have the capacity to perceive the temperature of their 
+        surroundings them. This is how they identify bigger prays while they are sleeping. We call them Minotaurus. Trust me they are pure evil.
         So that you can survive you will need an invisibility cloak. I can offer you one but first you must help me."""
         print("({}){}".format(player_name,a))
         a="""-Of course. I have no choice, and I really want to have that invisibility cloack. How can I help you?
@@ -161,7 +161,7 @@ if location1 == 'Cosima':
         a="""-I will try. Let me see the puzzle."""
         print("({}){}".format(player_name,a))
         image = Image.open('A_cosima1.png')
-        image.show() 
+        # image.show() 
         cosima_puzzle = input()
         print("({})- My answer code to unlock the enchantment is: {}.".format(player_name, cosima_puzzle))
         follow = 0
@@ -174,13 +174,14 @@ if location1 == 'Cosima':
                 tries_left -= 1
                 print("The code is incorrect. Try again! Tries left: {}".format(tries_left))
                 cosima_puzzle = input()
-        LIFE_POINTS = LIFE_POINTS - 1000
+                LIFE_POINTS = LIFE_POINTS - 500 # Every miss takes 500 LP away
         if tries_left <= 1:
             print("You lost all your opportunities.")
             print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
             sys.exit(0) # this if we want to finish game when player fails to pass a test
         else:
-            print("You are successful!")
+            print(player_name+", you are successful!")
+            print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
             a="""(Acantha)- Fantastic! The code works. This is going to break the enchantment which means that we will stay in our home. We
             appreciate your effort. As promised, we are giving you the invisibility cloak as a reward."""
             print("{}".format(a))
@@ -188,7 +189,10 @@ if location1 == 'Cosima':
             backpack.append('Invisibility cloak')
             for i in backpack:
                 print(LIGHTRED+i+END)
-        print("continues here")
+        a = """Now is getting dark. As Acantha told you the minotaurus will appear soon and scavenge all around the area. They are starving. 
+        Fortunately, you can use the invisibility cloak while you spend the night under the tree from Acantha. You have succesfully passed the first
+        enigma and in the morning you will travel to your next location. Move on!"""
+        print(DARKCYAN,"{}".format(LIFE_POINTS))
     if direction1 == 'B':
         LIFE_POINTS = LIFE_POINTS - 500
         a = """ You are crossing the river and thus water is in contact with you. You are hurrying to get to the other side because water seems to be
@@ -197,3 +201,5 @@ if location1 == 'Cosima':
         print(DARKCYAN+a)
         print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
         a = """The smell is definitely coming from this tree in front of you right now.  """
+
+print(BACKGROUNDBLUE+BLACK+"LEVEL 2"+END+DARKCYAN)
