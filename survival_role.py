@@ -1,10 +1,12 @@
-import sys
+import sys, os
 from PIL import Image
+import time
 """
 image = Image.open('Image1.png')
 image.show() 
 easy code for showing images in current directory (png or jpg format)
 """
+
 # =======================
 # === START VARIABLES ===
 # =======================
@@ -40,14 +42,27 @@ END = '\033[0m'
 
 LIFE_POINTS = 10000
 
+# =================
+# === FUNCTIONS ===
+# =================
+
+# Letters will appear slowly
+def print_style(text):
+    for letter in text:
+        print(letter,end='', flush=True)
+        time.sleep(0.03)
+    time.sleep(0.5)
+    print()
 
 # =============
 # === LOBBY ===
 # =============
+os.system("clear") # Clears the console before starting the game
 
-print(DARKCYAN+"Welcome to the Bear Grylls Ultimate Survival Skills game.\nHere you will have to pass a series of levels that will challenge your abilities of surviving in the wild with very few resources.\nGood luck!")
-print("Please select 3 of the following items to put in your backpack:"+END)
-print(LIGHTRED+"{}\t{}\t{}\n{}\t{}\t{}\n{}\t{}\t{}\n".format('Knife', 'Stormproof match kit', 'Flashlight', 'Bucket', 'Mosquito repeller', 'Tent', 
+print_style(DARKCYAN+"Welcome to the ~Bear Grylls Ultimate Survival Skills~ game.\nHere you will have to pass a series of levels that will challenge your abilities of surviving in the wild with very few resources.")
+print_style("Good luck!")
+print_style("Please select 3 of the following items to put in your backpack:"+END)
+print_style(LIGHTRED+"{}\t{}\t{}\n{}\t{}\t{}\n{}\t{}\t{}\n".format('Knife', 'Stormproof match kit', 'Flashlight', 'Bucket', 'Mosquito repeller', 'Tent', 
     'Sleeping bag', 'GPS', 'Water filter bottle'))
 possible_items = ['Knife', 'Stormproof match kit', 'Flashlight', 'Bucket', 'Mosquito repeller', 'Tent', 
     'Sleeping bag', 'GPS', 'Water filter bottle']
