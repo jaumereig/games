@@ -47,19 +47,28 @@ LIFE_POINTS = 10000
 # =================
 
 # Letters will appear slowly
-def print_style(text):
+def print_style(text, color=WHITE, speed = 0.04, end_speed = 0.5, end = True):
+    '''
+    Color:      color and style of the text
+    Speed:      speed of the letters being written
+    End_speed:  pause between the end of the writting and the next piece of code
+    End:        if True, prints newline. If False, doesn't jump to the next line
+    '''
+    print(color, end="")
     for letter in text:
-        print(letter,end='', flush=True)
-        time.sleep(0.03)
-    time.sleep(0.5)
-    print()
+        print(letter, end="", flush=True)
+        time.sleep(speed)
+    time.sleep(end_speed)
+    if end:
+        print(END)
 
 # =============
 # === LOBBY ===
 # =============
 os.system("clear") # Clears the console before starting the game
 
-print_style(DARKCYAN+"Welcome to the ~Bear Grylls Ultimate Survival Skills~ game.\nHere you will have to pass a series of levels that will challenge your abilities of surviving in the wild with very few resources.")
+print_style(DARKCYAN+"Welcome to the ~Bear Grylls Ultimate Survival Skills~ game.")
+print_style("Here you will have to pass a series of levels that will challenge your abilities of surviving in the wild with very few resources.")
 print_style("Good luck!")
 print_style("Please select 3 of the following items to put in your backpack:"+END)
 print_style(LIGHTRED+"{}\t{}\t{}\n{}\t{}\t{}\n{}\t{}\t{}\n".format('Knife', 'Stormproof match kit', 'Flashlight', 'Bucket', 'Mosquito repeller', 'Tent', 
