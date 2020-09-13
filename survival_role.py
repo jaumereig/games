@@ -225,7 +225,7 @@ if location1 == 'Cosima':
             appreciate your effort. As promised, we are giving you the invisibility cloak as a reward."""
             print_style(DARKCYAN+"{}".format(a))
             print_style(LIGHTRED+'Backpack:'+END)
-            backpack.append('Invisibility cloak')
+            backpack.add('Invisibility cloak')
             for i in backpack:
                 print_style(LIGHTRED+i+END)
         a = """Now is getting dark. As Acantha told you the minotaurus will appear soon and scavenge all around the area. They are starving. 
@@ -241,4 +241,8 @@ if location1 == 'Cosima':
         print_style(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
         a = """The smell is definitely coming from this tree in front of you right now.  """
 
-print_style(BACKGROUNDBLUE+BLACK+"LEVEL 2"+END+DARKCYAN)
+# print_style(BACKGROUNDBLUE+BLACK+"LEVEL 2"+END+DARKCYAN)
+
+else:
+    print_style("Great choice!", color=DARKCYAN)
+    print_style("")
