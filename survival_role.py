@@ -67,11 +67,11 @@ print_style(LIGHTRED+"{}\t{}\t{}\n{}\t{}\t{}\n{}\t{}\t{}\n".format('Knife', 'Sto
 possible_items = ['Knife', 'Stormproof match kit', 'Flashlight', 'Bucket', 'Mosquito repeller', 'Tent', 
     'Sleeping bag', 'GPS', 'Water filter bottle']
 
-print('First item:')
+print_style('First item:')
 item1 = input()
-print('Second item:')
+print_style('Second item:')
 item2 = input()
-print('Third item:')
+print_style('Third item:')
 item3 = input()
 
 backpack = []
@@ -84,52 +84,52 @@ if item3 in possible_items:
 ready_to_start = 0
 while ready_to_start == False:
     if len(backpack) == 3:
-        print(DARKCYAN+'Good! You are ready to begin the adventure! This are the items in your backpack to begin with:')
+        print_style(DARKCYAN+'Good! You are ready to begin the adventure! This are the items in your backpack to begin with:')
         for i in backpack:
-            print(i)
+            print_style(i)
         ready_to_start = 1
     else:
-        print('Looks like you have not filled your backpack with the required number of items. Remember to select 3 and write them as they appear in the menu.')
+        print_style('Looks like you have not filled your backpack with the required number of items. Remember to select 3 and write them as they appear in the menu.')
         for i in range(3-len(backpack)):
-            print('Add item:')
+            print_style('Add item:')
             newitem = input()
             if newitem in possible_items:
                 backpack.append(newitem)
                 if len(backpack) == 3:
-                    print('Good! You are ready to begin the adventure! This are the items in your backpack to begin with:')
+                    print_style('Good! You are ready to begin the adventure! This are the items in your backpack to begin with:')
                     for i in backpack:
-                        print(i)
+                        print_style(i)
                     ready_to_start = 1
-print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
-print(BACKGROUNDBLUE+BLACK+"LEVEL 1"+END+DARKCYAN)
-print("You are in Manning. This is a valley with poor biodiversity so you have to get out of here and find a place with resources that will ensure your survival.")
-print(LIGHTRED+"Where do you choose to go?\n{}\n{}\n(Input name only)".format("Cosima -- Land of fairies", "Griffin -- Land of mythological creatures"))
+print_style(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
+print_style(BACKGROUNDBLUE+BLACK+"LEVEL 1"+END+DARKCYAN)
+print_style("You are in Manning. This is a valley with poor biodiversity so you have to get out of here and find a place with resources that will ensure your survival.")
+print_style(LIGHTRED+"Where do you choose to go?\n{}\n{}\n(Input name only)".format("Cosima -- Land of fairies", "Griffin -- Land of mythological creatures"))
 location1 = input()
 follow = 0
 while follow == 0:
     if location1 =='Cosima' or location1 == 'Griffin':
         follow = True
     else:
-        print("Where do you choose to go?\n{}\n{}\n(Input name only)".format("Cosima -- Land of fairies", "Griffin -- Land of mythological creatures"))
+        print_style("Where do you choose to go?\n{}\n{}\n(Input name only)".format("Cosima -- Land of fairies", "Griffin -- Land of mythological creatures"))
         location1 = input()
 
 if location1 == 'Cosima':
-    print(DARKCYAN+"Good choice!\nAfter a few days walking you seem to have found a nice green grassland. You walk around and discover a huge diversity of fruits and plants that you have never seen before.")
-    print('There is even a river with crystalline water. You deserve drinking so you stop for a bit and enjoy yourself.')
+    print_style(DARKCYAN+"Good choice!\nAfter a few days walking you seem to have found a nice green grassland. You walk around and discover a huge diversity of fruits and plants that you have never seen before.")
+    print_style('There is even a river with crystalline water. You deserve drinking so you stop for a bit and enjoy yourself.')
     a = """Hey! Wake up! You fell asleep. It is time to get up and keep discovering what's new. Oh, wait. Something looks wrong. You got some rashes on your arms.
     It must have been the water you just had. Luckily, in BIO 101 professor Layton once talked about this fruit that can ease skin rushes. You can't remember 
     the name but you do remember that the fruit was red and triangular."""
-    print(a)
+    print_style(a)
     LIFE_POINTS = LIFE_POINTS - 500
-    print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
-    print(LIGHTRED+'Where will you go?\n{}\n{}\n(Input capital letter only)'.format("A - Away from the river", 'B - Cross the river '))
+    print_style(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
+    print_style(LIGHTRED+'Where will you go?\n{}\n{}\n(Input capital letter only)'.format("A - Away from the river", 'B - Cross the river '))
     direction1 = input()
     follow = 0
     while follow == 0:
         if direction1 == 'A' or direction1 == 'B':
             follow = True
         else:
-            print("Where will you go?\n{}\n{}\n(Input capital letter only)".format("A - Away from the river", 'B - Cross the river '))
+            print_style("Where will you go?\n{}\n{}\n(Input capital letter only)".format("A - Away from the river", 'B - Cross the river '))
             direction1 = input()
 
     if direction1 == 'A':
@@ -139,82 +139,83 @@ if location1 == 'Cosima':
         b = """ Bingo! These trees have fruits. Now is time for you to find the red and triangular fruit that professor Layton mentioned in class. There
         is one tree with a similar fruit. You take a few and eat one carefully.
          """
-        print(DARKCYAN+a+b)
+        print_style(DARKCYAN+a+b)
         LIFE_POINTS = LIFE_POINTS + 200
-        print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
+        print_style(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
         a = """Now that you have recovered you keep walking around the trees and recollect some fruits. This particular tree is drawing your attention.
         The crown of the tree is emitting a neon green light all around it. Get closer and discover what is going on!
         There are small creatures flying around the tree! They are tiny and move very fast, have little wings which are actually emitting the neon
         green light. If you move your hands towards them... they actually come closer to you. Maybe they actually like you and you are being welcomed.
         (Fairy)- Hello visitor! My name is Acantha. What is your name?"""
-        print(DARKCYAN+a)
+        print_style(DARKCYAN+a)
         player_name = input() # Introduction of player and variable can be used all along the program
+        """ Here there is some error """
         a ="""(Acantha)- Nice to meet you """
         b = """, I must warn you that it is not safe for you to stay here. At mid night the creatures from the underground arise and become deadly
         carnivores which will not leave any trace of life behind them. However, I am afraid there is no time left for you to leave so we shall provide
         you with our hideout to keep you protected."""
-        print(a+player_name+b)
+        print_style(a+player_name+b)
         a="""- Okay. Hold on. I can't believe this is real! You look like a tiny human the size of my pinky and you can speak like me, that is so cool!
         Though, I am very interested in knowing more about these underground animals you are talking about. How can I know they won't hurt me?
         (Acantha)- You haven't seen any of us but we have seen many of you instead. The creatures I am talking about are gigantic, they live underground
         and can see at night everything around them, just like you do during the day. They even have the capacity to perceive the temperature of their 
         surroundings them. This is how they identify bigger prays while they are sleeping. We call them Minotaurus. Trust me they are pure evil.
         So that you can survive you will need an invisibility cloak. I can offer you one but first you must help me."""
-        print("({}){}".format(player_name,a))
+        print_style("({}){}".format(player_name,a))
         a="""-Of course. I have no choice, and I really want to have that invisibility cloack. How can I help you?
         (Acantha)- I need you to solve a puzzle. Unfortunately, a witch enchanted our tree and it is dying. We can only unlock the enchantment by writing
         the correct code number onto the base of the tree's trunk. All we know is that the code is 3 digits long and we only have 3 tries left. Can you help?"""
-        print("({}){}\nWrite y if you are ready to solve the puzzle.".format(player_name,a))
+        print_style("({}){}\nWrite y if you are ready to solve the puzzle.".format(player_name,a))
         confirmation = input()
         follow = 0
         while follow == 0:
             if confirmation == 'YES' or confirmation == 'yes' or confirmation == 'y':
                 follow = True
             else:
-                print("Write y if you are ready to solve the puzzle.")
+                print_style("Write y if you are ready to solve the puzzle.")
                 confirmation = input()
         a="""-I will try. Let me see the puzzle."""
-        print("({}){}".format(player_name,a))
+        print_style("({}){}".format(player_name,a))
         image = Image.open('A_cosima1.png')
         # image.show() 
         cosima_puzzle = input()
-        print("({})- My answer code to unlock the enchantment is: {}.".format(player_name, cosima_puzzle))
+        print_style("({})- My answer code to unlock the enchantment is: {}.".format(player_name, cosima_puzzle))
         follow = 0
         tries_left = 3
         while follow == 0 and tries_left >= 2:
             if cosima_puzzle == '153':
-                print("Correct answer")
+                print_style("Correct answer")
                 follow = 1
             else:
                 tries_left -= 1
-                print("The code is incorrect. Try again! Tries left: {}".format(tries_left))
+                print_style("The code is incorrect. Try again! Tries left: {}".format(tries_left))
                 cosima_puzzle = input()
                 LIFE_POINTS = LIFE_POINTS - 500 # Every miss takes 500 LP away
         if tries_left <= 1:
-            print("You lost all your opportunities.")
-            print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
+            print_style("You lost all your opportunities.")
+            print_style(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
             sys.exit(0) # this if we want to finish game when player fails to pass a test
         else:
-            print(player_name+", you are successful!")
-            print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
+            print_style(player_name+", you are successful!")
+            print_style(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
             a="""(Acantha)- Fantastic! The code works. This is going to break the enchantment which means that we will stay in our home. We
             appreciate your effort. As promised, we are giving you the invisibility cloak as a reward."""
-            print("{}".format(a))
-            print(LIGHTRED+'Backpack:'+END)
+            print_style(DARKCYAN+"{}".format(a))
+            print_style(LIGHTRED+'Backpack:'+END)
             backpack.append('Invisibility cloak')
             for i in backpack:
-                print(LIGHTRED+i+END)
+                print_style(LIGHTRED+i+END)
         a = """Now is getting dark. As Acantha told you the minotaurus will appear soon and scavenge all around the area. They are starving. 
         Fortunately, you can use the invisibility cloak while you spend the night under the tree from Acantha. You have succesfully passed the first
         enigma and in the morning you will travel to your next location. Move on!"""
-        print(DARKCYAN,"{}".format(LIFE_POINTS))
+        #print_style(DARKCYAN+"{}".format(LIFE_POINTS))
     if direction1 == 'B':
         LIFE_POINTS = LIFE_POINTS - 500
         a = """ You are crossing the river and thus water is in contact with you. You are hurrying to get to the other side because water seems to be
         slightly poisonous.  On the other side of the river the landscape is just the same. However, it smells somewhat different. You shall trace 
         that smell and find out where it comes from!"""
-        print(DARKCYAN+a)
-        print(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
+        print_style(DARKCYAN+a)
+        print_style(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
         a = """The smell is definitely coming from this tree in front of you right now.  """
 
-print(BACKGROUNDBLUE+BLACK+"LEVEL 2"+END+DARKCYAN)
+print_style(BACKGROUNDBLUE+BLACK+"LEVEL 2"+END+DARKCYAN)
