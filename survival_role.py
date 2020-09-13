@@ -71,44 +71,58 @@ print_style(DARKCYAN+"Welcome to the ~Bear Grylls Ultimate Survival Skills~ game
 print_style("Here you will have to pass a series of levels that will challenge your abilities of surviving in the wild with very few resources.")
 print_style("Good luck!")
 print_style("Please select 3 of the following items to put in your backpack:"+END)
-print_style(LIGHTRED+"{}\t{}\t{}\n{}\t{}\t{}\n{}\t{}\t{}\n".format('Knife', 'Stormproof match kit', 'Flashlight', 'Bucket', 'Mosquito repeller', 'Tent', 
-    'Sleeping bag', 'GPS', 'Water filter bottle'))
+print_style(LIGHTRED+"{}\t{}\t{}\n{}\t{}\t{}\n{}\t{}\t\t\t{}\n".format('- Knife ', '- Stormproof match kit ', '- Flashlight ', '- Bucket ', '- Mosquito repeller ', '- Tent ', '- Sleeping bag ', '- GPS ', '- Water filter bottle'),speed=0.01)
 possible_items = ['Knife', 'Stormproof match kit', 'Flashlight', 'Bucket', 'Mosquito repeller', 'Tent', 
     'Sleeping bag', 'GPS', 'Water filter bottle']
 
-print_style('First item:')
-item1 = input()
-print_style('Second item:')
-item2 = input()
-print_style('Third item:')
-item3 = input()
+backpack = set()
 
-backpack = []
-if item1 in possible_items:
-    backpack.append(item1)
-if item2 in possible_items:
-    backpack.append(item2)
-if item3 in possible_items:
-    backpack.append(item3)
-ready_to_start = 0
-while ready_to_start == False:
-    if len(backpack) == 3:
-        print_style(DARKCYAN+'Good! You are ready to begin the adventure! This are the items in your backpack to begin with:')
-        for i in backpack:
-            print_style(i)
-        ready_to_start = 1
+first, second, third = False, False, False
+
+while not first:
+    print_style('1) First item:', end_speed=0)
+    item1 = input()
+    if item1 in possible_items:
+        backpack.add(item1)
+        first = True
     else:
-        print_style('Looks like you have not filled your backpack with the required number of items. Remember to select 3 and write them as they appear in the menu.')
-        for i in range(3-len(backpack)):
-            print_style('Add item:')
-            newitem = input()
-            if newitem in possible_items:
-                backpack.append(newitem)
-                if len(backpack) == 3:
-                    print_style('Good! You are ready to begin the adventure! This are the items in your backpack to begin with:')
-                    for i in backpack:
-                        print_style(i)
-                    ready_to_start = 1
+        print_style("\tERROR! That item doesn't exist or is wrongly written!", speed=0.01)
+        print_style("\tTry tipping a valid object as they are written above:", speed=0.01)
+
+while not second:
+    print_style('2) Second item:', end_speed=0)
+    item2 = input()
+    if item2 in possible_items:
+        if item2 not in backpack:
+            backpack.add(item2)
+            second = True
+        else:
+            print_style("\tThis item is already in your backpack!", speed=0.01)
+    else:
+        print_style("\tERROR! That item doesn't exist or is wrongly written!", speed=0.01)
+        print_style("\tTry tipping a valid object as they are written above:", speed=0.01)
+
+
+while not third:
+    print_style('3) Third item:', end_speed=0)
+    item3 = input()
+    if item3 in possible_items:
+        if item3 not in backpack:
+            backpack.add(item3)
+            third = True
+        else:
+            print_style("\tThis item is already in your backpack!", speed=0.01)
+    else:
+        print_style("\tERROR! That item doesn't exist or is wrongly written!", speed=0.01)
+        print_style("\tTry tipping a valid object as they are written above:", speed=0.01)
+
+print_style(DARKCYAN+'Good! You are ready to begin the adventure! This are the items in your backpack to begin with:')
+
+for item in backpack:
+    print_style(item+" ", RED, end=False)
+
+print()
+
 print_style(BOLD+'LIFE POINTS: {}.'.format(LIFE_POINTS)+END)
 print_style(BACKGROUNDBLUE+BLACK+"LEVEL 1"+END+DARKCYAN)
 print_style("You are in Manning. This is a valley with poor biodiversity so you have to get out of here and find a place with resources that will ensure your survival.")
