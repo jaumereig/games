@@ -1,11 +1,15 @@
 import random
 i = 0
-animals = ['Jirafa', 'Leon', 'Hipopotamo', 'Orca', 'E. coli', 'Tiburon blanco', 'Perezoso', 'Rana ojos verdes']
+group = 1
+novat = ['Saez', 'Abad', 'Ian', 'Meroño', 'Alcala', 'Yaiza', 'Marina', 'Eva']
 while i < 8:
-    a = random.choice(animals)
-    animals.remove(a)
-    b = random.choice(animals)
-    animals.remove(b)
+    a = random.choice(novat)
+    novat.remove(a)
+    b = random.choice(novat)
+    novat.remove(b)
+    c = random.choice(novat)
+    novat.remove(c)
     #print("---\n{}\n\t-vs-\n{}".format(a, b))
-    print("---\n{}\n{}".format(a, b))
-    i += 2
+    print("---------------\nGrup {}\n{}\t{}\t{}\n".format(group, a, b, c))
+    group += 1
+    i += 3
